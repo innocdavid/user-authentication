@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "User authentication and authorization application",
   "main": "server.js",
+  "type": "module",
   "scripts": {
+    "start": "nodemon back-end/server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Banja David Lotigo",
