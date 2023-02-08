@@ -1,0 +1,17 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "User authentication and authorization app",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Banja David Lotigo",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  }
+}
