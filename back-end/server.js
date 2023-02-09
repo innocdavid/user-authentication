@@ -1,5 +1,8 @@
 import express from "express";
+import cookieParser from "cookie-parser";
 import colors from "colors";
+import morgan from "morgan";
+
 import { db } from "./config/db.js";
 import { router } from "./routes/user.js";
 
@@ -9,6 +12,8 @@ const app = express();
 db();
 
 // MIDDLEWARE
+app.use(cookieParser());
+app.use(morgan("combined"));
 app.use(express.json());
 
 // basic home route

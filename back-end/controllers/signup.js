@@ -32,27 +32,4 @@ const signup = asyncHandler( async(req, res) => {
     return res.status(200).json({ message: user })
 });
 
-// user login
-const login = asyncHandler( async(req, res) => {
-    const { email, password } = req.body;
-    
-    // checking user
-    let existingUser;
-    try{
-        existingUser = await User.findOne({ email: email });
-    } catch (err) {
-        console.log(err);
-    }
-
-    // invalid user
-    if (!existingUser) return res.status(400).json({ message: "User does not exist, please sign up!"});
-    
-    const isPasswordCorrect = bcrypt.compareSync(password, existingUser.password);
-
-    // invalid password or email
-    if (!isPasswordCorrect) return res.status(400).json({ message: "Invalid email or password."});
-
-    res.status(200).json({ message: "User successful login"});
-});
-
-export { signup , login };
+export { signup };
